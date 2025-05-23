@@ -11,7 +11,13 @@ public class FirstSpringApplicationController {
     public String sayHello() {
         return "Hello from BridgeLabz";
     }
-    
+    @GetMapping("/user")
+    public String sayHello(
+            @RequestParam(value = "firstName", defaultValue = "Guest") String firstName,
+            @RequestParam(value = "lastName", defaultValue = "") String lastName
+        ) {
+        return "Hello " + firstName + " " + lastName + " from Bridgelabz!";
+    }
 
    
 }
